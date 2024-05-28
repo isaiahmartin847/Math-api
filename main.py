@@ -1,8 +1,12 @@
 from fastapi import FastAPI, HTTPException
 
 
-app = FastAPI
+app = FastAPI()
+
 
 @app.get("/")
-def home_root (): 
-    return {"this is": "home"}
+def read_root():
+    return {
+        "message": "Welcome to the simple math api",
+        "how to": "got to /math/[number]/[operator]/[number] then it will return the value"
+        }
