@@ -11,9 +11,8 @@ def equation_picker(op: str, num1: int, num2: int) -> any:
     }
 
     if op in operators:
-        return operators[op](num1, num2)
+        return {"result" : operators[op](num1, num2)}
     else: 
-        print("wrong operator")
         raise HTTPException(status_code=405, detail="operator was invalid")
     
 
