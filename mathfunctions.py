@@ -1,0 +1,35 @@
+from fastapi import HTTPException
+
+
+
+def equation_picker(op: str, num1: int, num2: int) -> any:
+    operators = {
+        "+": add,
+        "-": subtract,
+        "*": multiply,
+        "%": divide
+    }
+
+    if op in operators:
+        return operators[op](num1, num2)
+    else: 
+        print("wrong operator")
+        raise HTTPException(status_code=405, detail="operator was invalid")
+    
+
+
+def add (num1: int, num2: int) -> int:
+     return num1 + num2 
+
+
+def subtract (num1, num2):
+     return num1 - num2 
+
+def multiply (num1, num2):
+     return num1 * num2
+
+def divide (num1, num2):
+     return num1 / num2
+
+
+
