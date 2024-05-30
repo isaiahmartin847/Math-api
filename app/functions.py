@@ -1,7 +1,5 @@
 from fastapi import HTTPException
 
-def print_msg(): 
-     print("test-----------")
 
 def equation_picker(op: str, num1: int, num2: int) -> any:
     operators = {

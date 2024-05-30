@@ -1,11 +1,8 @@
 from fastapi import FastAPI
-from functions import print_msg
+from functions import equation_picker
 
 
 app = FastAPI()
-
-
-print_msg()
 
 @app.get("/")
 def read_root():
@@ -16,5 +13,4 @@ def read_root():
 
 @app.get("/math/{num1}/{op}/{num2}")
 def math_root(op: str, num1: int, num2: int):
-    return 1
-    # return equation_picker(op, num1, num2)
+    return equation_picker(op, num1, num2)
